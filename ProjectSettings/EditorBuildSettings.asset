@@ -11,5 +11,8 @@ EditorBuildSettings:
   - enabled: 1
     path: Assets/Scenes/Beach.unity
     guid: 8f6cc5b67e550b242934bb5cbd38dcf5
+  - enabled: 1
+    path: Assets/Scenes/Oceaning.unity
+    guid: 00e091c21e7ea3547a3fc757bbb57530
   m_configObjects: {}
   m_UseUCBPForAssetBundles: 0
