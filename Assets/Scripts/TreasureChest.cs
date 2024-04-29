@@ -19,5 +19,7 @@ public class TreasureChest : MonoBehaviour
     private void OnMouseDown()
     {
         SceneManager.LoadScene("Shop");
+        Cursor.visible = true;
+        Cursor.lockState = CursorLockMode.None;
     }
 }
