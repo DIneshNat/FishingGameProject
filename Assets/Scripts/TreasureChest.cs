@@ -5,19 +5,36 @@ using UnityEngine.SceneManagement;
 
 public class TreasureChest : MonoBehaviour
 {
-    // Start is called before the first frame update
-    void Start()
-    {
-        
-    }
-
-    // Update is called once per frame
-    void Update()
-    {
-        
-    }
+    public FirstPersonController firstPersonController;
+    public Sprite crosshairImageMouse;
+    public Sprite crosshairImageStandard;
+    public float crosshairSizeMouse;
+    public float crosshairSizeStandard;
     private void OnMouseDown()
     {
-        SceneManager.LoadScene("Shop");
+        GameObject player = GameObject.FindGameObjectWithTag("Player");
+        if (player.transform.position.x > -10 && player.transform.position.x < 0 && player.transform.position.z > -4 && player.transform.position.z < 4)
+        {
+            SceneManager.LoadScene("Shop");
+        }
+    }
+    private void OnMouseOver()
+    {
+        GameObject player = GameObject.FindGameObjectWithTag("Player");
+        if (player.transform.position.x > -10 && player.transform.position.x < 0 && player.transform.position.z > -4 && player.transform.position.z < 4)
+        {
+            firstPersonController.crosshairImage = crosshairImageMouse;
+            firstPersonController.crosshairSize = crosshairSizeMouse;
+        }
+        else
+        {
+            firstPersonController.crosshairImage = crosshairImageStandard;
+            firstPersonController.crosshairSize = crosshairSizeStandard;
+        }
+    }
+    private void OnMouseExit()
+    {
+        firstPersonController.crosshairImage = crosshairImageStandard;
+        firstPersonController.crosshairSize = crosshairSizeStandard;
     }
 }
