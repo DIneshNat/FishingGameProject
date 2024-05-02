@@ -1,14 +1,13 @@
 using System.Collections;
 using System.Collections.Generic;
-using Unity.VisualScripting;
 using UnityEngine;
 
-public class ChooseBoat : MonoBehaviour
+public class PrettyBoatSpawner : MonoBehaviour
 {
     // Start is called before the first frame update
+    public FirstPersonController firstPersonController;
     void Start()
     {
-        Instantiate(MainManager.Instance.boat, this.transform);
+        Instantiate(MainManager.Instance.boatPretty);
     }
-
 }
