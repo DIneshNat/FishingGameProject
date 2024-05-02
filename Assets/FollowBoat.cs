@@ -1,6 +1,8 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using System;
+using Unity.VisualScripting;
 
 public class FollowBoat : MonoBehaviour
 {
@@ -17,8 +19,9 @@ public class FollowBoat : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
+        
         player = GameObject.FindGameObjectWithTag("Boat");
-        transform.position = new Vector3(player.transform.position.x + displacex, player.transform.position.y + displacey, player.transform.position.z + displacez);
-        transform.rotation = new Quaternion(player.transform.rotation.x + rotatex, player.transform.rotation.y + rotatey, player.transform.rotation.z +rotatez , player.transform.rotation.w + rotatew);
+        transform.position = new Vector3((float)(player.transform.position.x + (displacex * Math.Cos(Math.PI * player.transform.rotation.y))), 5, (float)(player.transform.position.z - (displacez * Math.Sin(Math.PI * player.transform.rotation.z))));
+        transform.rotation = new Quaternion(0, player.transform.rotation.y + rotatey, player.transform.rotation.z +rotatez , player.transform.rotation.w + rotatew);
     }
 }
