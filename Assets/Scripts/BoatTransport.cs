@@ -1,24 +1,42 @@
 using System.Collections;
 using System.Collections.Generic;
+using Unity.VisualScripting;
 using UnityEngine;
 using UnityEngine.SceneManagement;
 
 public class BoatTransport : MonoBehaviour
 {
-    // Start is called before the first frame update
-    void Start()
-    {
-        
-    }
-
-    // Update is called once per frame
-    void Update()
-    {
-        
-    }
-
+    public FirstPersonController firstPersonController;
+    public Sprite crosshairImageMouse;
+    public Sprite crosshairImageStandard;
+    public float crosshairSizeMouse;
+    public float crosshairSizeStandard;
     private void OnMouseDown()
     {
-        SceneManager.LoadScene("Oceaning");
+        GameObject player = GameObject.FindGameObjectWithTag("Player");
+        if (player.transform.position.x > -6 && player.transform.position.x < 4 && player.transform.position.z > 10 && player.transform.position.z < 20)
+        {
+            SceneManager.LoadScene("Oceaning");
+        }
     }
+    private void OnMouseOver()
+    {
+        GameObject player = GameObject.FindGameObjectWithTag("Player");
+        if (player.transform.position.x > -6 && player.transform.position.x < 4 && player.transform.position.z > 10 && player.transform.position.z < 20)
+        {
+            firstPersonController.crosshairImage = crosshairImageMouse;
+            firstPersonController.crosshairSize = crosshairSizeMouse;
+        }
+        else
+        {
+            firstPersonController.crosshairImage = crosshairImageStandard;
+            firstPersonController.crosshairSize = crosshairSizeStandard;
+        }
+    }
+    private void OnMouseExit()
+    {
+        firstPersonController.crosshairImage = crosshairImageStandard;
+        firstPersonController.crosshairSize = crosshairSizeStandard;
+    }
+    
 }

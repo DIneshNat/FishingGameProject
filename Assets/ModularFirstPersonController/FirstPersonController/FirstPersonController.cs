@@ -33,6 +33,7 @@ public class FirstPersonController : MonoBehaviour
     public bool crosshair = true;
     public Sprite crosshairImage;
     public Color crosshairColor = Color.white;
+    public float crosshairSize = .05f;
 
     // Internal Variables
     private float yaw = 0.0f;
@@ -358,7 +359,11 @@ public class FirstPersonController : MonoBehaviour
 
         CheckGround();
 
-        if(enableHeadBob)
+        crosshairObject.sprite = crosshairImage;
+        crosshairObject.color = crosshairColor;
+        crosshairObject.rectTransform.localScale = new Vector3(crosshairSize, crosshairSize, crosshairSize);
+
+        if (enableHeadBob)
         {
             HeadBob();
         }
