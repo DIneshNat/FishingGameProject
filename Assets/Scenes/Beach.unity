@@ -949,7 +949,7 @@ GameObject:
   - component: {fileID: 338818118}
   m_Layer: 0
   m_Name: MainManager
-  m_TagString: Untagged
+  m_TagString: Manager
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -969,6 +969,7 @@ MonoBehaviour:
   boat: {fileID: 2417650980371560314, guid: 127bb7a5391ec3044a92cee70b36e9b0, type: 3}
   boatPretty: {fileID: 1565410193102321997, guid: 4ab792ec49db8a34aa5723c7456c2648, type: 3}
   boatpos: {x: 0, y: 0, z: 0}
+  hasRod: 0
 --- !u!4 &338818119
 Transform:
   m_ObjectHideFlags: 0
@@ -2441,6 +2442,33 @@ PrefabInstance:
     m_AddedGameObjects: []
     m_AddedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 9174a3378d4a3604898103ff9fcecf55, type: 3}
+--- !u!1 &1313947691 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 1709645365194793493, guid: 5376c0efa310a5e4796bb41ad9acfcf4, type: 3}
+  m_PrefabInstance: {fileID: 6281722959303941525}
+  m_PrefabAsset: {fileID: 0}
+--- !u!64 &1313947695
+MeshCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1313947691}
+  m_Material: {fileID: 0}
+  m_IncludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_ExcludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_LayerOverridePriority: 0
+  m_IsTrigger: 0
+  m_ProvidesContacts: 0
+  m_Enabled: 1
+  serializedVersion: 5
+  m_Convex: 0
+  m_CookingOptions: 30
+  m_Mesh: {fileID: 4300000, guid: b2fe5033d7fc7ab4b8badb297d040686, type: 3}
 --- !u!4 &1370196563 stripped
 Transform:
   m_CorrespondingSourceObject: {fileID: 2669565714271665822, guid: 9174a3378d4a3604898103ff9fcecf55, type: 3}
@@ -3216,11 +3244,34 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 519431ace5881fe439f0e3c8fa814969, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  firstPersonController: {fileID: 0}
-  crosshairImageMouse: {fileID: 0}
-  crosshairImageStandard: {fileID: 0}
-  crosshairSizeMouse: 0
-  crosshairSizeStandard: 0
+  firstPersonController: {fileID: 1614626744}
+  crosshairImageMouse: {fileID: 21300000, guid: 1d301105aab052f4d9ce180279a535aa, type: 3}
+  crosshairImageStandard: {fileID: 21300000, guid: be4ce60e2c9768c44b9b10b9c5258045, type: 3}
+  crosshairSizeMouse: 1
+  crosshairSizeStandard: 0.05
+  manager: {fileID: 338818118}
+--- !u!64 &1685784432
+MeshCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1685784430}
+  m_Material: {fileID: 0}
+  m_IncludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_ExcludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_LayerOverridePriority: 0
+  m_IsTrigger: 0
+  m_ProvidesContacts: 0
+  m_Enabled: 1
+  serializedVersion: 5
+  m_Convex: 0
+  m_CookingOptions: 30
+  m_Mesh: {fileID: 7206472575975855354, guid: f3af3c356e2ae6346893512397408e38, type: 3}
 --- !u!1001 &1698099004
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -3273,6 +3324,10 @@ PrefabInstance:
       propertyPath: m_Name
       value: Fishing_Rod
       objectReference: {fileID: 0}
+    - target: {fileID: 919132149155446097, guid: f3af3c356e2ae6346893512397408e38, type: 3}
+      propertyPath: m_TagString
+      value: FishinRod
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
@@ -3280,6 +3335,9 @@ PrefabInstance:
     - targetCorrespondingSourceObject: {fileID: 919132149155446097, guid: f3af3c356e2ae6346893512397408e38, type: 3}
       insertIndex: -1
       addedObject: {fileID: 1685784431}
+    - targetCorrespondingSourceObject: {fileID: 919132149155446097, guid: f3af3c356e2ae6346893512397408e38, type: 3}
+      insertIndex: -1
+      addedObject: {fileID: 1685784432}
   m_SourcePrefab: {fileID: 100100000, guid: f3af3c356e2ae6346893512397408e38, type: 3}
 --- !u!1001 &1730051964
 PrefabInstance:
@@ -4021,7 +4079,10 @@ PrefabInstance:
     m_RemovedComponents: []
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
-    m_AddedComponents: []
+    m_AddedComponents:
+    - targetCorrespondingSourceObject: {fileID: 1709645365194793493, guid: 5376c0efa310a5e4796bb41ad9acfcf4, type: 3}
+      insertIndex: -1
+      addedObject: {fileID: 1313947695}
   m_SourcePrefab: {fileID: 100100000, guid: 5376c0efa310a5e4796bb41ad9acfcf4, type: 3}
 --- !u!1660057539 &9223372036854775807
 SceneRoots:
