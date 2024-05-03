@@ -1,7 +1,8 @@
 fileFormatVersion: 2
-guid: bfc401a16d438de498be934d79641f4e
-DefaultImporter:
+guid: 0982336231d4218459d2001ee76293b3
+NativeFormatImporter:
   externalObjects: {}
+  mainObjectFileID: 0
   userData: 
   assetBundleName: 
   assetBundleVariant: 
@@ -10,5 +11,5 @@ AssetOrigin:
   productId: 202232
   packageName: Fish - PolyPack
   packageVersion: 1.0
-  assetPath: Assets/Boats/Boats LowPoly/Scene/Showcase.unity
+  assetPath: Assets/Boats/Boats LowPoly/Scene/ShowcaseFloor.mat
   uploadId: 450755

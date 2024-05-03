@@ -34,6 +34,9 @@ public class TreasureChest : MonoBehaviour
     }
     private void OnMouseExit()
     {
+        SceneManager.LoadScene("Shop");
+        Cursor.visible = true;
+        Cursor.lockState = CursorLockMode.None;
         firstPersonController.crosshairImage = crosshairImageStandard;
         firstPersonController.crosshairSize = crosshairSizeStandard;
     }
