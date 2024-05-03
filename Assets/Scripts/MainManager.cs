@@ -8,6 +8,8 @@ public class MainManager : MonoBehaviour
 
     public GameObject boat;
     public GameObject boatPretty;
+    public Vector3 boatpos;
+    
     private void Awake()
     {
         if (Instance != null)
@@ -18,5 +20,9 @@ public class MainManager : MonoBehaviour
 
         Instance = this;
         DontDestroyOnLoad(gameObject);
+    }
+    private void Update()
+    {
+        boatpos = GameObject.FindGameObjectWithTag("Boat").transform.position;
     }
 }
