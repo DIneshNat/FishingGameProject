@@ -8,17 +8,11 @@ public class FollowBoat : MonoBehaviour
     public int rotatew, rotatex, rotatey, rotatez;
     public GameObject player;
 
-    // Start is called before the first frame update
-    void Start()
-    {
-        player = GameObject.FindGameObjectWithTag("Boat"); // The player
-    }
-
     // Update is called once per frame
     void Update()
     {
-        player = GameObject.FindGameObjectWithTag("Boat");
+        player = GameObject.FindGameObjectWithTag("CamMount");
         transform.position = new Vector3(player.transform.position.x + displacex, player.transform.position.y + displacey, player.transform.position.z + displacez);
-        transform.rotation = new Quaternion(player.transform.rotation.x + rotatex, player.transform.rotation.y + rotatey, player.transform.rotation.z +rotatez , player.transform.rotation.w + rotatew);
+        transform.rotation = new Quaternion(this.transform.rotation.x, this.transform.rotation.y, player.transform.rotation.z +rotatez , player.transform.rotation.w + rotatew);
     }
 }

@@ -245,12 +245,12 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 94eeff5c7dfeb3c45815a0108fa1a2b0, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  displacex: 10
-  displacey: 5
+  displacex: 0
+  displacey: 0
   displacez: 0
   rotatew: 0
   rotatex: 0
-  rotatey: -1
+  rotatey: 0
   rotatez: 0
   player: {fileID: 0}
 --- !u!81 &188254004
@@ -640,6 +640,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   boat: {fileID: 2417650980371560314, guid: 127bb7a5391ec3044a92cee70b36e9b0, type: 3}
   boatPretty: {fileID: 0}
+  boatpos: {x: 0, y: 0, z: 0}
 --- !u!4 &1566345386
 Transform:
   m_ObjectHideFlags: 0
