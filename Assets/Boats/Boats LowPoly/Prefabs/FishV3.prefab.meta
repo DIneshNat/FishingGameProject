@@ -1,6 +1,6 @@
 fileFormatVersion: 2
-guid: bfc401a16d438de498be934d79641f4e
-DefaultImporter:
+guid: de500f6b90f89bc4c87a6585b2dea01a
+PrefabImporter:
   externalObjects: {}
   userData: 
   assetBundleName: 
@@ -10,5 +10,5 @@ AssetOrigin:
   productId: 202232
   packageName: Fish - PolyPack
   packageVersion: 1.0
-  assetPath: Assets/Boats/Boats LowPoly/Scene/Showcase.unity
+  assetPath: Assets/Boats/Boats LowPoly/Prefabs/FishV3.prefab
   uploadId: 450755
