@@ -1,15 +1,18 @@
 using System.Collections;
 using System.Collections.Generic;
+using TMPro;
 using Unity.VisualScripting;
 using UnityEngine;
 using UnityEngine.EventSystems;
 using UnityEngine.SceneManagement;
+using System;
 
 
 public class FishMove : MonoBehaviour
 {
     public float moveSpeed = 5;
     public float fishType = 1;
+    public TMP_Text money;
     // Start is called before the first frame update
     void Start()
     {
@@ -36,5 +39,6 @@ public class FishMove : MonoBehaviour
     public void destroyFish()
     {
         Destroy(gameObject);
+
     }
 }
