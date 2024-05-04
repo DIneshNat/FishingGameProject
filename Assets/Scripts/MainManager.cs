@@ -9,7 +9,7 @@ public class MainManager : MonoBehaviour
     public GameObject boat;
     public GameObject boatPretty;
     public Vector3 boatpos;
-    
+    public bool hasRod;
     private void Awake()
     {
         if (Instance != null)

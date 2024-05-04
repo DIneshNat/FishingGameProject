@@ -1,30 +1,32 @@
 using System.Collections;
 using System.Collections.Generic;
+using Unity.VisualScripting;
 using UnityEngine;
-using UnityEngine.SceneManagement;
 
-public class TreasureChest : MonoBehaviour
+public class FishingRodItemScript : MonoBehaviour
 {
     public FirstPersonController firstPersonController;
     public Sprite crosshairImageMouse;
     public Sprite crosshairImageStandard;
     public float crosshairSizeMouse;
     public float crosshairSizeStandard;
-    private void OnMouseDown()
+    public MainManager manager;
+
+    // Start is called before the first frame update
+    void Start()
     {
-        GameObject player = GameObject.FindGameObjectWithTag("Player");
-        if (player.transform.position.x > -10 && player.transform.position.x < 0 && player.transform.position.z > -4 && player.transform.position.z < 4)
-        {
-            Cursor.visible = true;
-            Cursor.lockState = CursorLockMode.None;
-            SceneManager.LoadScene("Shop");
-        }
         
     }
-    private void OnMouseOver()
+
+    // Update is called once per frame
+    void Update()
+    {
+        
+    }
+    private void OnMouseEnter()
     {
         GameObject player = GameObject.FindGameObjectWithTag("Player");
-        if (player.transform.position.x > -10 && player.transform.position.x < 0 && player.transform.position.z > -4 && player.transform.position.z < 4)
+        if (player.transform.position.x > -5 && player.transform.position.x < 4 && player.transform.position.z > -2 && player.transform.position.z < 7)
         {
             firstPersonController.crosshairImage = crosshairImageMouse;
             firstPersonController.crosshairSize = crosshairSizeMouse;
@@ -37,8 +39,16 @@ public class TreasureChest : MonoBehaviour
     }
     private void OnMouseExit()
     {
-        
+
         firstPersonController.crosshairImage = crosshairImageStandard;
         firstPersonController.crosshairSize = crosshairSizeStandard;
+    }
+
+    private void OnMouseDown()
+    {
+        manager.hasRod = true;
+        firstPersonController.crosshairImage = crosshairImageStandard;
+        firstPersonController.crosshairSize = crosshairSizeStandard;
+        Destroy(GameObject.FindGameObjectWithTag("FishinRod"));
     }
 }
