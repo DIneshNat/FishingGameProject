@@ -377,7 +377,7 @@ MonoBehaviour:
   - {fileID: 6818863219355696920}
   - {fileID: 6141265856706609285}
   rudder: []
-  propellers_constant: 5
+  propellers_constant: 3
   engine_max_rpm: 1000
   acceleration_cst: 5
   drag: 0.01

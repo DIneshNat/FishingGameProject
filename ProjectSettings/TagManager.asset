@@ -8,6 +8,10 @@ TagManager:
   - CamMount
   - Manager
   - FishinRod
+  - HeldRod
+  - Hook
+  - Sea
+  - Line
   layers:
   - Default
   - TransparentFX

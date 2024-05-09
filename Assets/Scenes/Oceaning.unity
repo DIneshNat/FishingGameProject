@@ -638,9 +638,10 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 4bfbfad6cdd376a42b87b9c415ce3978, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  boat: {fileID: 2417650980371560314, guid: 127bb7a5391ec3044a92cee70b36e9b0, type: 3}
+  boat: {fileID: 3696883633427218650, guid: e46e365aad1c9d2468f2e027f9bbcf05, type: 3}
   boatPretty: {fileID: 0}
   boatpos: {x: 0, y: 0, z: 0}
+  hasRod: 0
 --- !u!4 &1566345386
 Transform:
   m_ObjectHideFlags: 0
