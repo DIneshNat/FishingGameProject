@@ -21,6 +21,7 @@ public class Fishing : MonoBehaviour
     private void Start()
     {
         rodOut = false;
+        lineout = false;
     }
     void Update()
     {
@@ -32,6 +33,7 @@ public class Fishing : MonoBehaviour
                 GameObject.Instantiate(hook, player.transform);
                 lineRenderer = GameObject.FindGameObjectWithTag("Line").GetComponent<LineRenderer>();
                 rodOut = true;
+                GameObject.FindGameObjectWithTag("Hook").GetComponent<Rigidbody>().isKinematic = true;
             }
             else
             {
@@ -41,19 +43,17 @@ public class Fishing : MonoBehaviour
                 rodOut = false;
             }
         }
-        if(!lineout && rodOut)
+        if(Input.GetMouseButtonDown(1) && mainManager.hasRod && rodOut && !lineout)
         {
-            GameObject.FindGameObjectWithTag("Hook").transform.position = player.transform.position;
-        }
-        if(Input.GetMouseButtonDown(1) && mainManager.hasRod)
-        {
+            GameObject.FindGameObjectWithTag("Hook").GetComponent<Rigidbody>().isKinematic = false;
             lineout = true;
             GameObject.FindGameObjectWithTag("Hook").GetComponent<Rigidbody>().useGravity = true;
             GameObject.FindGameObjectWithTag("Hook").GetComponent<Rigidbody>().AddForce(xforce, yforce, zforce, ForceMode.Impulse);
             lineRenderer.positionCount--;
         }
-        if(lineout && mainManager.hasRod)
+        if(lineout && mainManager.hasRod && rodOut)
         {
+            lineRenderer = GameObject.FindGameObjectWithTag("Line").GetComponent<LineRenderer>();
             lineRenderer.SetPosition(2, GameObject.FindGameObjectWithTag("Hook").transform.position);
             timer += Time.deltaTime;
             if(timer > 2)
@@ -63,10 +63,12 @@ public class Fishing : MonoBehaviour
                 GameObject.Destroy(GameObject.FindGameObjectWithTag("Hook"));
                 GameObject.Instantiate(fishingRod, player.transform);
                 GameObject.Instantiate(hook, player.transform);
+                GameObject.FindGameObjectWithTag("Hook").GetComponent<Rigidbody>().isKinematic = true;
                 lineRenderer = GameObject.FindGameObjectWithTag("Line").GetComponent<LineRenderer>();
 
                 timer = 0;
             }
+            Debug.Log(timer);
         }
         if(false)
         {
