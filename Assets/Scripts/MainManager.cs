@@ -1,6 +1,8 @@
 using System.Collections;
 using System.Collections.Generic;
+using UnityEditor.SearchService;
 using UnityEngine;
+using UnityEngine.SceneManagement;
 
 public class MainManager : MonoBehaviour
 {
@@ -23,6 +25,9 @@ public class MainManager : MonoBehaviour
     }
     private void Update()
     {
-        boatpos = GameObject.FindGameObjectWithTag("Boat").transform.position;
+        if (SceneManager.GetActiveScene().name == "Oceaning")
+        {
+            boatpos = GameObject.FindGameObjectWithTag("Boat").transform.position;
+        }
     }
 }

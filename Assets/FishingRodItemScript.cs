@@ -11,6 +11,8 @@ public class FishingRodItemScript : MonoBehaviour
     public float crosshairSizeMouse;
     public float crosshairSizeStandard;
     public MainManager manager;
+    public TMPro.TMP_Text RodInfo;
+    public Animator animator;
 
     // Start is called before the first frame update
     void Start()
@@ -50,5 +52,6 @@ public class FishingRodItemScript : MonoBehaviour
         firstPersonController.crosshairImage = crosshairImageStandard;
         firstPersonController.crosshairSize = crosshairSizeStandard;
         Destroy(GameObject.FindGameObjectWithTag("FishinRod"));
+        animator.Play("RodAnimation");
     }
 }
