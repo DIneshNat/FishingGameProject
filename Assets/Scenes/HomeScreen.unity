@@ -850,6 +850,60 @@ CanvasRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 874006339}
   m_CullTransparentMesh: 1
+--- !u!1 &972151614
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 972151616}
+  - component: {fileID: 972151615}
+  m_Layer: 0
+  m_Name: MainManager
+  m_TagString: Manager
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!114 &972151615
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 972151614}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 4bfbfad6cdd376a42b87b9c415ce3978, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  boat: {fileID: 2417650980371560314, guid: 127bb7a5391ec3044a92cee70b36e9b0, type: 3}
+  boatPretty: {fileID: 1283446337553512641, guid: 2303b56a847636244acdb042aa95bcf8, type: 3}
+  boatpos: {x: 0, y: 0, z: 0}
+  hasRod: 0
+  playerpos: {x: -0.6, y: 2.57, z: 7}
+  playerrot: {x: 0, y: 0, z: 0, w: 0}
+  camerarot: {x: 0, y: 0, z: 0, w: 0}
+  playedOpening: 0
+  animator: {fileID: 0}
+  fishingRod: {fileID: 2976723603022721421, guid: 243be9ba94a71084f9476a99e3ce727d, type: 3}
+--- !u!4 &972151616
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 972151614}
+  serializedVersion: 2
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 79.23524, y: 18.773205, z: 170.07379}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
+  m_Children: []
+  m_Father: {fileID: 0}
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &989766379
 GameObject:
   m_ObjectHideFlags: 0
@@ -954,6 +1008,7 @@ GameObject:
   m_Component:
   - component: {fileID: 1268384933}
   - component: {fileID: 1268384934}
+  - component: {fileID: 1268384935}
   m_Layer: 5
   m_Name: MainMenu
   m_TagString: Untagged
@@ -994,6 +1049,30 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: c72500362f76ec045b8c3effebd324d8, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  mainmanager: {fileID: 0}
+  animator: {fileID: 1268384935}
+--- !u!95 &1268384935
+Animator:
+  serializedVersion: 7
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1268384932}
+  m_Enabled: 1
+  m_Avatar: {fileID: 0}
+  m_Controller: {fileID: 9100000, guid: 2c41c63ce2d68a746957802c19a2027c, type: 2}
+  m_CullingMode: 0
+  m_UpdateMode: 0
+  m_ApplyRootMotion: 0
+  m_LinearVelocityBlending: 0
+  m_StabilizeFeet: 0
+  m_AnimatePhysics: 0
+  m_WarningMessage: 
+  m_HasTransformHierarchy: 1
+  m_AllowConstantClipSamplingOptimization: 1
+  m_KeepAnimatorStateOnDisable: 0
+  m_WriteDefaultValuesOnDisable: 0
 --- !u!1 &1288797855
 GameObject:
   m_ObjectHideFlags: 0
@@ -1279,3 +1358,4 @@ SceneRoots:
   - {fileID: 989766381}
   - {fileID: 55363143}
   - {fileID: 1888315456}
+  - {fileID: 972151616}

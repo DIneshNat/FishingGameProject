@@ -11,19 +11,19 @@ public class FishingRodItemScript : MonoBehaviour
     public float crosshairSizeMouse;
     public float crosshairSizeStandard;
     public MainManager manager;
-    public TMPro.TMP_Text RodInfo;
     public Animator animator;
-
-    // Start is called before the first frame update
-    void Start()
-    {
-        
-    }
 
     // Update is called once per frame
     void Update()
     {
         
+    }
+    private void Start()
+    {
+        GameObject player = GameObject.FindGameObjectWithTag("Player");
+        firstPersonController = player.GetComponent<FirstPersonController>();
+        manager = player.GetComponent<Fishing>().mainManager;
+        animator = manager.animator;
     }
     private void OnMouseEnter()
     {
