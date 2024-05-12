@@ -12,6 +12,9 @@ TagManager:
   - Hook
   - Sea
   - Line
+  - Tip
+  - Hookspot
+  - Creator
   layers:
   - Default
   - TransparentFX
