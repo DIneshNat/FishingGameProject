@@ -1,3 +1,4 @@
+using System;
 using System.Collections;
 using System.Collections.Generic;
 using Unity.VisualScripting;
@@ -21,6 +22,7 @@ public class MainManager : MonoBehaviour
     public GameObject fishingRod;
     public string ogScene;
     private bool setScene = false;
+    public int FishValue = 0;
     private void Awake()
     {
         if(!setScene)
@@ -91,6 +93,9 @@ public class MainManager : MonoBehaviour
                 ogScene = SceneManager.GetActiveScene().name;
                 SceneManager.LoadScene("HomeScreen");
             }
+        }
+        if(SceneManager.GetActiveScene().name == "Fish"){
+            FishValue = Convert.ToInt32(GameObject.FindGameObjectWithTag("FishScore").GetComponent<TMPro.TMP_Text>().text);
         }
     }
 }

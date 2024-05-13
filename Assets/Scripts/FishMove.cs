@@ -12,7 +12,8 @@ public class FishMove : MonoBehaviour
 {
     public float moveSpeed = 5;
     public float fishType = 1;
-    public TMP_Text money;
+    public int fishValue = 50;
+    public TMP_Text score;
     // Start is called before the first frame update
     void Start()
     {
@@ -43,6 +44,13 @@ public class FishMove : MonoBehaviour
     public void destroyFish()
     {
         Destroy(gameObject);
-
+        string scoreVal = GameObject.FindGameObjectWithTag("FishScore").GetComponent<TMPro.TMP_Text>().text;
+        int scoreVals = Convert.ToInt32(scoreVal);
+        scoreVals += fishValue;
+        if (scoreVals > 99999)
+        {
+            scoreVals = 99999;
+        }
+        GameObject.FindGameObjectWithTag("FishScore").GetComponent<TMPro.TMP_Text>().text = scoreVals.ToString();
     }
 }
