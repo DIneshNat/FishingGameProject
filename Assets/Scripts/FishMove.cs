@@ -35,6 +35,10 @@ public class FishMove : MonoBehaviour
         {
             Destroy(gameObject);
         }
+        if (Input.GetKeyDown("space"))
+        {
+            SceneManager.LoadScene("Beach");
+        }
     }
     public void destroyFish()
     {
