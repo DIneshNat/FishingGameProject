@@ -23,6 +23,7 @@ public class MainManager : MonoBehaviour
     public string ogScene;
     private bool setScene = false;
     public int FishValue = 0;
+    public int coins = 0;
     private void Awake()
     {
         if(!setScene)
@@ -63,6 +64,15 @@ public class MainManager : MonoBehaviour
             {
                 GameObject.FindGameObjectWithTag("Player").GetComponent<Fishing>().InstantiateRod();
             }
+        }
+        if(scene.name == "Fish")
+        {
+            GameObject.FindGameObjectWithTag("FishScore").GetComponent<TMPro.TMP_Text>().text = FishValue.ToString();
+        }
+        if(scene.name == "Shop")
+        {
+            GameObject.FindGameObjectWithTag("FishScore").GetComponent<TMPro.TMP_Text>().text = FishValue.ToString();
+            GameObject.FindGameObjectWithTag("Money").GetComponent<TMPro.TMP_Text>().text = coins.ToString();
         }
     }
     private void Update()

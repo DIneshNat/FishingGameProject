@@ -17,6 +17,7 @@ TagManager:
   - Creator
   - Empty
   - FishScore
+  - Money
   layers:
   - Default
   - TransparentFX
