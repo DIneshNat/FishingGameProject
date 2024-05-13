@@ -20,5 +20,8 @@ EditorBuildSettings:
   - enabled: 1
     path: Assets/Scenes/Fish.unity
     guid: cc11d6d5e5561c64dbf6a5b25cccdd7e
+  - enabled: 1
+    path: Assets/Scenes/nullScene.unity
+    guid: 709998f387cb4f04e8472bafa7424306
   m_configObjects: {}
   m_UseUCBPForAssetBundles: 0

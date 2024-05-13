@@ -23,11 +23,11 @@ public class FishingRodItemScript : MonoBehaviour
         GameObject player = GameObject.FindGameObjectWithTag("Player");
         firstPersonController = player.GetComponent<FirstPersonController>();
         manager = player.GetComponent<Fishing>().mainManager;
-        animator = manager.animator;
     }
     private void OnMouseEnter()
     {
         GameObject player = GameObject.FindGameObjectWithTag("Player");
+        animator = manager.animator;
         if (player.transform.position.x > -5 && player.transform.position.x < 4 && player.transform.position.z > -2 && player.transform.position.z < 7)
         {
             firstPersonController.crosshairImage = crosshairImageMouse;

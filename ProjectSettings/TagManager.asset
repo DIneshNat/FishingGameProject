@@ -15,6 +15,7 @@ TagManager:
   - Tip
   - Hookspot
   - Creator
+  - Empty
   layers:
   - Default
   - TransparentFX
