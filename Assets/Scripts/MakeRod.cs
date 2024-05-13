@@ -10,7 +10,6 @@ public class MakeRod : MonoBehaviour
     // Start is called before the first frame update
     void Awake()
     {
-        Debug.Log(mainManager.hasRod);
         if(!mainManager.hasRod)
         {
             Debug.Log("Player has no rod on scene load");

@@ -8,9 +8,20 @@ public class MainMenu : MonoBehaviour
 {
     public MainManager mainmanager;
     public Animator animator;
+    public void Update()
+    {
+        mainmanager = GameObject.FindGameObjectWithTag("Manager").GetComponent<MainManager>();
+    }
     public void PlayGame()
     {
-        SceneManager.LoadScene("Beach");
+        if (mainmanager.ogScene == "nullScene")
+        {
+            SceneManager.LoadScene("Beach");
+        }
+        else
+        {
+            SceneManager.LoadScene(mainmanager.ogScene);
+        }
     }
 
     public void QuitGame()

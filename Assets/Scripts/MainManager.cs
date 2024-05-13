@@ -1,5 +1,6 @@
 using System.Collections;
 using System.Collections.Generic;
+using Unity.VisualScripting;
 using UnityEngine;
 using UnityEngine.SceneManagement;
 
@@ -11,14 +12,22 @@ public class MainManager : MonoBehaviour
     public GameObject boatPretty;
     public Vector3 boatpos;
     public bool hasRod = false;
+    public bool rodOut = false;
     public Vector3 playerpos;
     public Quaternion playerrot;
     public Quaternion camerarot;
     public bool playedOpening = false;
     public Animator animator;
     public GameObject fishingRod;
+    public string ogScene;
+    private bool setScene = false;
     private void Awake()
     {
+        if(!setScene)
+        {
+            ogScene = "nullScene";
+            setScene = true;
+        }
         if (Instance != null)
         {
             Destroy(gameObject);
@@ -45,8 +54,12 @@ public class MainManager : MonoBehaviour
             GameObject.FindGameObjectWithTag("MainCamera").transform.rotation = camerarot;
             if(!hasRod)
             {
-                Debug.Log("rectin rod");
                 Instantiate(fishingRod, GameObject.FindGameObjectWithTag("Creator").transform);
+            }
+            GameObject.FindGameObjectWithTag("Player").GetComponent<Fishing>().rodOut = rodOut;
+            if(rodOut)
+            {
+                GameObject.FindGameObjectWithTag("Player").GetComponent<Fishing>().InstantiateRod();
             }
         }
     }
@@ -68,6 +81,16 @@ public class MainManager : MonoBehaviour
             playerpos = GameObject.FindGameObjectWithTag("Player").transform.position;
             playerrot = GameObject.FindGameObjectWithTag("Player").transform.rotation;
             camerarot = GameObject.FindGameObjectWithTag("MainCamera").transform.rotation;
+            rodOut = GameObject.FindGameObjectWithTag("Player").GetComponent<Fishing>().rodOut;
+        }
+        if(Input.GetKeyDown(KeyCode.Escape))
+        {
+            if(SceneManager.GetActiveScene() != SceneManager.GetSceneByName("HomeScreen"))
+            {
+                Cursor.lockState = CursorLockMode.None;
+                ogScene = SceneManager.GetActiveScene().name;
+                SceneManager.LoadScene("HomeScreen");
+            }
         }
     }
 }

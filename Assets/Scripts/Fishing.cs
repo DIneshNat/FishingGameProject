@@ -10,14 +10,14 @@ public class Fishing : MonoBehaviour
     public GameObject fishingRod;
     public GameObject hook;
     public FirstPersonController player;
-    private bool rodOut;
+    public bool rodOut;
     private LineRenderer lineRenderer;
     private bool lineout;
     // Update is called once per frame
     private void Start()
     {
-        rodOut = false;
         lineout = false;
+        mainManager = GameObject.FindGameObjectWithTag("Manager").GetComponent<MainManager>();
     }
     private void DestroyRod()
     {
@@ -27,7 +27,7 @@ public class Fishing : MonoBehaviour
         lineout = false;
         rodOut = false;
     }
-    private void InstantiateRod()
+    public void InstantiateRod()
     {
         GameObject.Instantiate(fishingRod, player.transform);
         GameObject.Instantiate(hook, GameObject.FindGameObjectWithTag("Hookspot").transform);
@@ -78,6 +78,10 @@ public class Fishing : MonoBehaviour
             GameObject liney = GameObject.FindGameObjectWithTag("Line");
             GameObject.FindGameObjectWithTag("Line").transform.position = GameObject.FindGameObjectWithTag("Tip").transform.position;
             lineRenderer.SetPosition(1, new Vector3(GameObject.FindGameObjectWithTag("Hook").transform.position.x - liney.transform.position.x, GameObject.FindGameObjectWithTag("Hook").transform.position.y - liney.transform.position.y,GameObject.FindGameObjectWithTag("Hook").transform.position.z - liney.transform.position.z));
+            if(GameObject.FindGameObjectWithTag("Hook").transform.position.y <= -3)
+            {
+                GameObject.FindGameObjectWithTag("Hook").GetComponent<Rigidbody>().isKinematic = true;
+            }
         }
     }
 

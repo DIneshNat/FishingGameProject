@@ -11,10 +11,11 @@ public class BoatTransport : MonoBehaviour
     public Sprite crosshairImageStandard;
     public float crosshairSizeMouse;
     public float crosshairSizeStandard;
+    public MainManager mainManager;
     private void OnMouseDown()
     {
         GameObject player = GameObject.FindGameObjectWithTag("Player");
-        if (player.transform.position.x > -6 && player.transform.position.x < 4 && player.transform.position.z > 10 && player.transform.position.z < 20)
+        if (player.transform.position.x > -6 && player.transform.position.x < 4 && player.transform.position.z > 10 && player.transform.position.z < 20 && GameObject.FindGameObjectWithTag("Empty") == null)
         {
             SceneManager.LoadScene("Oceaning");
         }
@@ -22,7 +23,7 @@ public class BoatTransport : MonoBehaviour
     private void OnMouseOver()
     {
         GameObject player = GameObject.FindGameObjectWithTag("Player");
-        if (player.transform.position.x > -6 && player.transform.position.x < 4 && player.transform.position.z > 10 && player.transform.position.z < 20)
+        if (player.transform.position.x > -6 && player.transform.position.x < 4 && player.transform.position.z > 10 && player.transform.position.z < 20 && GameObject.FindGameObjectWithTag("Empty") == null)
         {
             firstPersonController.crosshairImage = crosshairImageMouse;
             firstPersonController.crosshairSize = crosshairSizeMouse;
