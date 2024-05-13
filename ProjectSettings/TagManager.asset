@@ -16,6 +16,7 @@ TagManager:
   - Hookspot
   - Creator
   - Empty
+  - FishScore
   layers:
   - Default
   - TransparentFX
