@@ -21,6 +21,7 @@ public class MainManager : MonoBehaviour
     public Animator animator;
     public GameObject fishingRod;
     public string ogScene;
+    public string ogFishScene;
     private bool setScene = false;
     public int FishValue = 0;
     public int coins = 0;
@@ -75,11 +76,14 @@ public class MainManager : MonoBehaviour
             GameObject.FindGameObjectWithTag("Money").GetComponent<TMPro.TMP_Text>().text = coins.ToString();
         }
     }
+    
     private void Update()
     {
         if (SceneManager.GetActiveScene().name == "Oceaning")
         {
             boatpos = GameObject.FindGameObjectWithTag("Boat").transform.position;
+            GameObject.FindGameObjectWithTag("Player").GetComponent<Fishing>().hasRod = hasRod;
+            rodOut = GameObject.FindGameObjectWithTag("Player").GetComponent<Fishing>().rodOut;
         }
         if(SceneManager.GetActiveScene().name == "Beach")
         {

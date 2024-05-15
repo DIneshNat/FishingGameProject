@@ -8,9 +8,10 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.UI;
+using UnityEngine.SceneManagement;
 
 #if UNITY_EDITOR
-    using UnityEditor;
+using UnityEditor;
     using System.Net;
 #endif
 
@@ -47,6 +48,7 @@ public class FirstPersonController : MonoBehaviour
     public KeyCode zoomKey = KeyCode.Mouse1;
     public float zoomFOV = 30f;
     public float zoomStepTime = 5f;
+    public bool ocean;
 
     // Internal Variables
     private bool isZoomed = false;
@@ -134,6 +136,7 @@ public class FirstPersonController : MonoBehaviour
 
     private void Awake()
     {
+        ocean = SceneManager.GetActiveScene() == SceneManager.GetSceneByName("Oceaning");
         rb = GetComponent<Rigidbody>();
 
         crosshairObject = GetComponentInChildren<Image>();
@@ -164,14 +167,17 @@ public class FirstPersonController : MonoBehaviour
         }
         else
         {
-            crosshairObject.gameObject.SetActive(false);
+            if(!ocean)
+            {
+                crosshairObject.gameObject.SetActive(false);
+            }
         }
 
         #region Sprint Bar
 
         sprintBarCG = GetComponentInChildren<CanvasGroup>();
 
-        if(useSprintBar)
+        if(useSprintBar && !ocean)
         {
             sprintBarBG.gameObject.SetActive(true);
             sprintBar.gameObject.SetActive(true);
@@ -192,8 +198,11 @@ public class FirstPersonController : MonoBehaviour
         }
         else
         {
-            sprintBarBG.gameObject.SetActive(false);
-            sprintBar.gameObject.SetActive(false);
+            if (!ocean)
+            {
+                sprintBarBG.gameObject.SetActive(false);
+                sprintBar.gameObject.SetActive(false);
+            }
         }
 
         #endregion
@@ -358,10 +367,12 @@ public class FirstPersonController : MonoBehaviour
         #endregion
 
         CheckGround();
-
-        crosshairObject.sprite = crosshairImage;
-        crosshairObject.color = crosshairColor;
-        crosshairObject.rectTransform.localScale = new Vector3(crosshairSize, crosshairSize, crosshairSize);
+        if(crosshair)
+        {
+            crosshairObject.sprite = crosshairImage;
+            crosshairObject.color = crosshairColor;
+            crosshairObject.rectTransform.localScale = new Vector3(crosshairSize, crosshairSize, crosshairSize);
+        }
 
         if (enableHeadBob)
         {
