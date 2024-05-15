@@ -9,7 +9,6 @@ public class Fishing : MonoBehaviour
     public bool hasRod;
     public GameObject fishingRod;
     public GameObject hook;
-    public FirstPersonController player;
     public bool rodOut;
     private LineRenderer lineRenderer;
     private bool lineout;
@@ -29,7 +28,7 @@ public class Fishing : MonoBehaviour
     }
     public void InstantiateRod()
     {
-        GameObject.Instantiate(fishingRod, player.transform);
+        GameObject.Instantiate(fishingRod, this.transform);
         GameObject.Instantiate(hook, GameObject.FindGameObjectWithTag("Hookspot").transform);
         lineRenderer = GameObject.FindGameObjectWithTag("Line").GetComponent<LineRenderer>();
         lineRenderer.transform.parent = null;
