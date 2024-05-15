@@ -780,6 +780,12 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   fish: {fileID: 1356228789}
   money: {fileID: 536736599}
+  woodappearance: {fileID: 1565410193102321997, guid: 4ab792ec49db8a34aa5723c7456c2648, type: 3}
+  scoutappearance: {fileID: 8323448465008042187, guid: b66d8768991456d45b53c21cea755431, type: 3}
+  fishappearance: {fileID: 1283446337553512641, guid: 2303b56a847636244acdb042aa95bcf8, type: 3}
+  woodreal: {fileID: 2417650980371560314, guid: 127bb7a5391ec3044a92cee70b36e9b0, type: 3}
+  scoutreal: {fileID: 3696883633427218650, guid: e46e365aad1c9d2468f2e027f9bbcf05, type: 3}
+  fishreal: {fileID: 4460887621989331248, guid: cf8ce06a36a5346458cb4fabcc103152, type: 3}
 --- !u!1 &396246678
 GameObject:
   m_ObjectHideFlags: 0

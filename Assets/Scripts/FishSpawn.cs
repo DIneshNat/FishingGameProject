@@ -1,6 +1,7 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.SceneManagement;
 
 public class FishSpawn : MonoBehaviour
 {
@@ -55,6 +56,10 @@ public class FishSpawn : MonoBehaviour
         {
             spawnFish();
             timer = 0;
+        }
+        if (Input.GetKeyDown("space"))
+        {
+            SceneManager.LoadScene("Beach");
         }
     }
 
