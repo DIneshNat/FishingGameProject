@@ -69,7 +69,7 @@ public class ShopScript : MonoBehaviour
 
     public void buyBoat3()
     {
-        BuyBoat(30000, woodappearance, fishreal);
+        BuyBoat(30000, fishappearance, fishreal);
     }
 }
 

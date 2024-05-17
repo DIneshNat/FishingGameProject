@@ -9,6 +9,7 @@ public class EnterFishing : MonoBehaviour
     {
         if (collision.gameObject.tag == "Sea")
         {
+            GameObject.FindGameObjectWithTag("Manager").GetComponent<MainManager>().ogFishScene = SceneManager.GetActiveScene().name;
             SceneManager.LoadScene("Fish");
             Cursor.lockState = CursorLockMode.None;
         }

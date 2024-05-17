@@ -59,7 +59,7 @@ public class FishSpawn : MonoBehaviour
         }
         if (Input.GetKeyDown("space"))
         {
-            SceneManager.LoadScene("Beach");
+            SceneManager.LoadScene(manager.ogFishScene);
         }
     }
 
