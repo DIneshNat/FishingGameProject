@@ -13,6 +13,7 @@ public class GrowWithDistance : MonoBehaviour
         if(place.x >= zone.x + 450 || place.x <= zone.x - 450 || place.z >= zone.z + 450 || place.z <= zone.z -450)
         {
             transform.position = place;
+            GameObject.FindGameObjectWithTag("Blocker").transform.position = new Vector3(place.x, -1.3f, place.z);
         }
     }
 }
