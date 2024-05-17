@@ -45,7 +45,7 @@ public class FishSpawn : MonoBehaviour
     {
         manager = GameObject.FindGameObjectWithTag("Manager").GetComponent<MainManager>();
         distance = manager.boatpos;
-        distanceTotal = distance.x + distance.y + distance.z;
+        distanceTotal = Mathf.Abs(distance.x) + Mathf.Abs(distance.y) + Mathf.Abs(distance.z);
 
 
         if(timer < spawnRate)
